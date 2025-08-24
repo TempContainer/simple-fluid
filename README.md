@@ -1,6 +1,6 @@
-# Simple-Fluid
+# simple-fluid
 
-A simple fluid simulation using the Warp library. The simulation is based on the Navier-Stokes equations and uses a semi-Lagrangian advection scheme.
+A simple fluid simulation using warp.
 
 ## 2D Smoke Simulation
 
@@ -12,7 +12,7 @@ A simple fluid simulation using the Warp library. The simulation is based on the
 - semi-Lagrangian scheme
 - Poisson solver to enforce incompressibility
 
-![2D Smoke Simulation](out/smoke_2d.gif)
+https://github.com/user-attachments/assets/6a306858-72d5-411a-8212-385ed3b0d86e
 
 ### Requirements
 
