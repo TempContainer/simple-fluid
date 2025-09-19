@@ -6,5 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "matplotlib>=3.10.5",
+    "pyglet>=2.1.8",
+    "usd-core>=25.8",
     "warp-lang>=1.8.1",
 ]
