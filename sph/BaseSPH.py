@@ -7,6 +7,7 @@ p_diameter = p_radius * 2.0
 smoothing_radius = p_radius * 4.0
 rho0 = 1000.0
 viscosity = 0.002
+surface_tension = 0.01
 lower_boundary = wp.vec3(0.0, 0.0, 0.0)
 upper_boundary = wp.vec3(1.0, 2.0, 2.0)
 
@@ -107,8 +108,15 @@ def compute_non_pressure_forces(
     neighbors = wp.hash_grid_query(grid, x[i], smoothing_radius)
     for j in neighbors:
         r_ij = x[i] - x[j]
+        # viscosity
+        r_len_sq = wp.length_sq(r_ij)
         a[i] += 2.0 * (float(dim) + 2.0) * viscosity * (mass / rho[j]) * wp.dot(v[i] - v[j], r_ij) / (
-            wp.length_sq(r_ij) + 0.01 * smoothing_radius**2.0) * cubic_kernel_grad(r_ij)
+            r_len_sq + 0.01 * smoothing_radius**2.0) * cubic_kernel_grad(r_ij)
+        # surface tension
+        if r_len_sq > p_diameter * p_diameter:
+            a[i] -= surface_tension * r_ij * cubic_kernel(wp.length(r_ij))
+        else:
+            a[i] -= surface_tension * r_ij * cubic_kernel(p_diameter)
 
 @wp.kernel
 def advect(
