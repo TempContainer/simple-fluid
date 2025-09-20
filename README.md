@@ -26,6 +26,8 @@ https://github.com/user-attachments/assets/6a306858-72d5-411a-8212-385ed3b0d86e
 - PCISPH
 - viscosity and surface tension
 
+https://github.com/user-attachments/assets/ce704ef8-2973-4255-a5ca-87b0f345650a
+
 ### Requirements
 
 - warp
