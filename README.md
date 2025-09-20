@@ -2,7 +2,7 @@
 
 A simple fluid simulation using warp.
 
-## 2D Smoke Simulation
+## Grid Method: 2D Smoke Simulation
 
 ### Overview
 
@@ -18,6 +18,19 @@ https://github.com/user-attachments/assets/6a306858-72d5-411a-8212-385ed3b0d86e
 
 - warp
 - matplotlib
+
+## Particle Method: Water Simulation
+
+### Overview
+
+- PCISPH
+- viscosity and surface tension
+
+### Requirements
+
+- warp
+- pyglet (for OpenGL debug visualization)
+- usd-core (for exporting to USD format)
 
 ## Usage
 
